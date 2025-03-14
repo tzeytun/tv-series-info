@@ -48,9 +48,9 @@ Number of Seasons: 6
 ============================
 Number of Episodes: 86
 ============================
-**IMDB Rating:** 9.2/10
+IMDB Rating: 9.2/10
 ============================
-**Metacritic Score:** 92/100
+Metacritic Score: 92/100
 ============================
 Language: English
 ============================
