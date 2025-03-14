@@ -20,7 +20,7 @@ def get_series_info(series_name):
         messages=[
             {
                 "role": "user",
-                "content": f"Provide details about the TV series {series_name} including its name, plot, number of seasons, number of episodes, IMDB Score, Metacritic Score, language, and the top 5 main actors. If the series does not exist, return 'Series Not Found' error. Use '============================' to separate each detail."
+                "content": f"Provide details about the TV series {series_name} including its name, plot, number of seasons, number of episodes, IMDB Rating, Metacritic Score, language, and the top 5 main actors. If the series does not exist, return 'Series Not Found' error. Use '============================' to separate each detail."
             }
         ]
     )
