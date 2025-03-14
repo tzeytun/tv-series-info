@@ -44,6 +44,8 @@ Name: The Sopranos
 ============================  
 Plot: The series revolves around Tony Soprano, a New Jersey-based Italian-American mobster, who struggles to balance his family life with his role as the leader of a criminal organization. As he deals with personal and professional challenges, he sees a therapist to manage his anxiety and depression.  
 ============================  
+Genres: Crime, Drama  
+============================  
 Number of Seasons: 6  
 ============================
 Number of Episodes: 86
