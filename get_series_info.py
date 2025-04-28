@@ -1,6 +1,14 @@
 import os
 from openai import OpenAI
 
+def clean_response(text):
+    text = text.replace("\\boxed{", "")
+    text = text.replace("```text", "")
+    text = text.replace("```", "")
+    text = text.replace("}`", "")
+    text = text.replace("}", "")
+    return text.strip()
+
 def get_series_info(series_name):
     api_key = os.getenv("OPENROUTER_API_KEY")
     base_url = os.getenv("BASE_URL")
@@ -20,10 +28,10 @@ def get_series_info(series_name):
         messages=[
             {
                 "role": "user",
-                "content": f"Provide details about the TV series {series_name} including its name, plot, genres, number of seasons, number of episodes, IMDB Rating, Metacritic Score, language, and the top 5 main actors. If the series does not exist, return 'Series Not Found' error. Use '============================' to separate each detail."
+                "content": f'Provide details about the TV series "{series_name}" in the following strict format: Name: [value] ============================ Plot: [value] ============================ Genres: [value] ============================ Number of Seasons: [value] ============================ Number of Episodes: [value] ============================ IMDB Rating: [value] ============================ Metacritic Score: [value] ============================ Language: [value] ============================ Top 5 Main Actors: 1. [Actor Name] (as [Character Name]) 2. [Actor Name] (as [Character Name]) 3. [Actor Name] (as [Character Name]) 4. [Actor Name] (as [Character Name]) 5. [Actor Name] (as [Character Name]) ============================ If the series does not exist, return exactly "Series Not Found" and nothing else. Return the output strictly as raw plain text without LaTeX, markdown, boxed format, or code fences like ```text. Do not wrap the output inside any code block or mathematical environment. Only return the pure text fields separated by "============================" as instructed.'
             }
         ]
     )
 
-    return response.choices[0].message.content
+    return clean_response(response.choices[0].message.content)  
 
